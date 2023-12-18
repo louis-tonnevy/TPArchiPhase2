@@ -2,7 +2,7 @@
 // Code revised for Eleve management
 // --------------------------------------------------------
 
-package Groupe;
+package isty.phase2.Groupe;
 
 import java.util.List;
 import java.util.HashMap;
@@ -30,12 +30,12 @@ public class Personne extends SqlUtils {
 	private String mail;
 
 	/**
-	 * Constructeur pour un élève.
+	 * Constructeur pour un ï¿½lï¿½ve.
 	 * 
-	 * @param id L'identifiant unique de l'élève
-	 * @param prenom Le prénom de l'élève
-	 * @param nom Le nom de famille de l'élève
-	 * @param mail L'adresse email de l'élève
+	 * @param id L'identifiant unique de l'ï¿½lï¿½ve
+	 * @param prenom Le prï¿½nom de l'ï¿½lï¿½ve
+	 * @param nom Le nom de famille de l'ï¿½lï¿½ve
+	 * @param mail L'adresse email de l'ï¿½lï¿½ve
 	 */
 	public Personne(String id, String prenom, String nom, String mail) {
 		this.id = id;
@@ -45,7 +45,7 @@ public class Personne extends SqlUtils {
 	}
 	
 	/**
-	 * Enregistre un nouvel élève dans la base de données.
+	 * Enregistre un nouvel ï¿½lï¿½ve dans la base de donnï¿½es.
 	 */
 	public void save() {
 		this.connect();
@@ -55,7 +55,7 @@ public class Personne extends SqlUtils {
 	}
 	
 	/**
-	 * Met à jour les informations de l'élève dans la base de données.
+	 * Met ï¿½ jour les informations de l'ï¿½lï¿½ve dans la base de donnï¿½es.
 	 */
 	public void update() {
 		this.connect();
@@ -64,7 +64,7 @@ public class Personne extends SqlUtils {
 		this.disconnect();
 	}
 	
-	// Vous pouvez définir des méthodes supplémentaires comme delete(), getById(), getAll(), getAllByFilter() selon vos besoins.
+	// Vous pouvez dï¿½finir des mï¿½thodes supplï¿½mentaires comme delete(), getById(), getAll(), getAllByFilter() selon vos besoins.
 	
-	// Getters et Setters pour chaque propriété peuvent également être ajoutés ici.
+	// Getters et Setters pour chaque propriï¿½tï¿½ peuvent ï¿½galement ï¿½tre ajoutï¿½s ici.
 };

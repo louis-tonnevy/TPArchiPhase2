@@ -17,7 +17,7 @@ Groupe
 | Req-gro-09 |           |      X      |
 | Req-gro-10 |           |      X      |
 
-  # Exigences fonctionnelles
+  # Exigences fonctionnelles phase 1
 - L'utilisateur peut créer une Unité d'Enseignement.
 - L'utilisateur peut supprimer une Unité d'Enseignement.
 - L'utilisateur peut créer un élève.
@@ -29,7 +29,7 @@ Groupe
 - L'utilisateur peut créer aléatoirement des groupes pour un ensemble d'élèves. 
 - L'utilisateur peut changer un élève de groupe.
 
-# Exigences non fonctionnelles
+# Exigences non fonctionnelles phase 1
 - Req-doc-01 : La documentation doit décrire la procédure d'installation de la version binaire du système.
 - Req-doc-02 : La documentation doit décrire la procédure de désinstallation de la version binaire du système.
 - Req-doc-03 : La documentation doit décrire les interfaces de chaque composant.
@@ -53,11 +53,48 @@ Groupe
 - Req-arc-03 : Les communications entre IHM et fonctions passent par une interface (au sens du mot-clé) Java clairement explicitée.
 - Req-arc-04 : Les opérations exposées par l'interface sont de 4 types: lecture, création, modification, suppression d'un objet.
 - Req-arc-05 : Les classes implémentant l'IHM, les fonctionnalités (modèle métier) et l'application (main) sont packagées dans trois jar distincts.
-- Req-arc-06:  L'identifiant des objets créés est attribuée par l'IHM.
+- Req-arc-06 : L'identifiant des objets créés est attribuée par l'IHM.
 - Req-arc-07 : Les requêtes vont uniquement du composant IHM vers je composant exposant les fonctions.
 - Req-fct-01 : Après re-démarrage du système il est dans le même état qu'avant son arrêt (données).
 - Req-fct-02 : L'IHM peut être mise à jour (automatiquement ou à la demande de l'utilisateur).
 
+# Exigences de la phase 2
+
+## Nouvelles exigences
+- Req-arc-08 : Le système est composé de deux parties : un client présentant l'IHM et un serveur gérant les données.
+- Req-arc-09 : Le client et le serveur peuvent être déployés sur deux machines distinctes.
+- Req-arc-10 : La communication entre client et serveur passe par un service web (REST ou SOAP).
+- Req-arc-11 : Le port d'écoute du serveur est paramétrable via un fichier dans un format standard (XML, JSON, YAML ou INI).
+- Req-arc-12 : Le serveur utilisé par le client est paramétrable via un fichier dans un format standard (XML, JSON, YAML ou INI).
+- Req-arc-13 : Le déploiement du serveur passe par une unique commande.
+- Req-arc-14 : Le démarrage du serveur passe par une unique commande.
+- Req-arc-15 : L'arrêt du serveur passe par une unique commande).
+- Req-arc-16 : L'API utilisée est exprimée dans un langage adapté au protocole retenu (REST ou OpenAPI).
+
+## Exigences obsolète de la phase 1
+- ~~Req-arc-01~~ : Le système à l’exécution est constitué d'un seul processus.
+- ~~Req-arc-02~~ : Le programme principal instancie deux objets : l'un implémentant l'IHM et l'autre exposant les fonctionnalités.
+- ~~Req-arc-03~~ : Les communications entre IHM et fonctions passent par une interface (au sens du mot-clé) Java clairement explicitée.
+- ~~Req-arc-04~~ : Les opérations exposées par l'interface sont de 4 types: lecture, création, modification, suppression d'un objet.
+- ~~Req-arc-05~~ : Les classes implémentant l'IHM, les fonctionnalités (modèle métier) et l'application (main) sont packagées dans trois jar distincts.
+- ~~Req-arc-06~~:  L'identifiant des objets créés est attribuée par l'IHM.
+- ~~Req-arc-07~~ : Les requêtes vont uniquement du composant IHM vers je composant exposant les fonctions.
+
+
+## Build
+### ECLIPSE
+ * RunAs -> maven install
+ * The jar file has been created in the target folder
+ * RunAs -> Java application
+ 
+### Command line
+  * ```mvn clean package```
+  * ```java -jar target/client.jar```
+  * ```java -jar target/server.jar```
+
+### Remove binaries
+    * ```mvn clean```
+    
 ## Packages 
 - App: App controller
 - IHM: User interafce

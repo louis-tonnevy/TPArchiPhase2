@@ -1,5 +1,5 @@
 
-package IHM;
+package isty.phase2.IHM;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -21,7 +21,7 @@ import java.awt.event.FocusEvent;
 
 import org.json.JSONObject;
 
-import Groupe.GroupeImplementation;
+import isty.phase2.Groupe.GroupeImplementation;
 import java.util.Random;
 import java.util.HashSet;
 import java.util.Set;
