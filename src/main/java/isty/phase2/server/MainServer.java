@@ -29,4 +29,12 @@ public class MainServer {
         }
     }
 
+    @Path("/app")
+    public static class HelloWorldResource {
+        @GET
+        public String getHello() {
+            return "Hello, world!";
+        }
+    }
+
 }
