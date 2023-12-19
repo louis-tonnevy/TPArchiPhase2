@@ -1,4 +1,4 @@
-package Groupe;
+package isty.phase2.Groupe;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
